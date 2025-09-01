@@ -42,6 +42,12 @@ class IntegrationConfiguration {
 
   public static final String INTEGRATION_TOPIC = "integration_topic";
 
+  /*
+  A direct channel is a subscription channel. It doesn't have a
+  receive() method. The only way with spring integration is this
+  If we had defined for example QueueChannel, we could call it's blocking
+  receive method.
+   */
   @ServiceActivator(inputChannel = "inboundChannel")
   void consume(Message<PV> message) {
     System.out.printf("received %s%n", message.getPayload());
