@@ -44,7 +44,7 @@ public class Test {
             .forEach(
                 i -> {
                   streamBridge.send(
-                      "counter-in-0",
+                      "pv-topic",
                       randomPageView("kafka-stream"));
                 });
   }
